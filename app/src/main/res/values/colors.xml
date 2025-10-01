@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores del tema día -->
+    <color name="primary">#8B7355</color>
+    <color name="primary_dark">#6D5A47</color>
+    <color name="accent">#D4C4A8</color>
+    <color name="background">#D4C4A8</color>
+    <color name="surface">#E8DCC8</color>
+    <color name="text_primary">#3E2723</color>
+    <color name="text_secondary">#5D4037</color>
+
+    <!-- Colores de la entrada -->
+    <color name="sky_start">#87CEEB</color>
+    <color name="sky_end">#D4C4A8</color>
+    <color name="cave_entrance_start">#3E2723</color>
+    <color name="cave_entrance_end">#5D4037</color>
+
+    <!-- Colores de la laguna -->
+    <color name="lagoon_color">#87CEEB</color>
+</resources>

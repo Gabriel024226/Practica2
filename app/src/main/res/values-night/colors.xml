@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores del tema noche -->
+    <color name="primary">#2C2C2C</color>
+    <color name="primary_dark">#1A1A1A</color>
+    <color name="accent">#607D8B</color>
+    <color name="background">#1A1A1A</color>
+    <color name="surface">#2A2A2A</color>
+    <color name="text_primary">#E0E0E0</color>
+    <color name="text_secondary">#B0B0B0</color>
+
+    <!-- Colores de la entrada noche -->
+    <color name="sky_start">#0D47A1</color>
+    <color name="sky_end">#1A1A1A</color>
+    <color name="cave_entrance_start">#000000</color>
+    <color name="cave_entrance_end">#2C2C2C</color>
+
+    <!-- Colores de la laguna -->
+    <color name="lagoon_color">#003366</color>
+</resources>

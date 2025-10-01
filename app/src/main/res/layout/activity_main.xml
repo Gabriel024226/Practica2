@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="@string/cave_entrance"
+            app:titleTextColor="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingEnd="8dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_dialog_info"
+                    android:tint="@android:color/white"
+                    android:contentDescription="Day icon"/>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/themeSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_dialog_alert"
+                    android:tint="@android:color/white"
+                    android:contentDescription="Night icon"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Imagen de entrada con botón superpuesto -->
+            <FrameLayout
+                android:id="@+id/caveEntranceContainer"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@color/sky_start">
+
+                <!-- Aquí irá tu imagen de fondo -->
+                <ImageView
+                    android:id="@+id/backgroundImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cave_entrance_bg"
+                    android:contentDescription="Cave entrance"/>
+
+                <!-- Indicador día/noche -->
+                <TextView
+                    android:id="@+id/dayNightIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:padding="12dp"
+                    android:text="☀️ Día"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:background="#4D000000"
+                    android:layout_gravity="start|top"/>
+
+                <!-- Botón circular de entrada -->
+                <FrameLayout
+                    android:id="@+id/enterButton"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="60dp"
+                    android:background="@drawable/circular_button_bg"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@android:drawable/ic_media_play"
+                            android:tint="@color/text_secondary"
+                            android:contentDescription="Enter"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ENTRAR"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_secondary"
+                            android:letterSpacing="0.2"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- Indicador de toque -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:padding="12dp"
+                    android:text="@string/tap_to_enter"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:background="#CC8B7355"
+                    android:drawableStart="@android:drawable/ic_menu_send"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@android:color/white"/>
+            </FrameLayout>
+
+            <!-- Contenido descriptivo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bienvenido a la Cueva Misteriosa"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"/>
+
+                <TextView
+                    android:id="@+id/descriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary"
+                    android:lineSpacingExtra="4dp"/>
+
+                <!-- Elementos interactivos -->
+                <include
+                    layout="@layout/item_interactive_element"
+                    android:id="@+id/rockFormation"/>
+
+                <include
+                    layout="@layout/item_interactive_element"
+                    android:id="@+id/mossElement"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

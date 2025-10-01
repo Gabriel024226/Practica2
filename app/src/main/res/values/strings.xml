@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Exploración de Cueva</string>
+    <string name="cave_entrance">Entrada de la Cueva</string>
+    <string name="first_chamber">Primera Cámara</string>
+    <string name="lagoon_chamber">Cámara de la Laguna</string>
+    <string name="tap_to_enter">Toca la entrada para explorar</string>
+    <string name="tap_to_continue">Toca el pasaje para continuar</string>
+    <string name="close">Cerrar</string>
+    <string name="back_to_entrance">Volver a la Entrada</string>
+</resources>
