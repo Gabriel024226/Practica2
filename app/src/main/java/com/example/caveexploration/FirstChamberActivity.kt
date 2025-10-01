@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import com.google.android.material.switchmaterial.SwitchMaterial
 
 class FirstChamberActivity : AppCompatActivity() {
     private lateinit var themeManager: ThemeManager
@@ -18,12 +17,9 @@ class FirstChamberActivity : AppCompatActivity() {
         themeManager = ThemeManager(this)
         themeManager.initTheme()
 
-        // --- CORRECCIÓN ---
-        // Mover setContentView() aquí, antes de acceder a cualquier vista.
         setContentView(R.layout.activity_first_chamber)
 
         setupToolbar()
-        setupThemeSwitch()
         setupUI()
         setupInteractiveElements()
     }
@@ -36,16 +32,6 @@ class FirstChamberActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
-    }
-
-    private fun setupThemeSwitch() {
-        val themeSwitch = findViewById<SwitchMaterial>(R.id.themeSwitch)
-        themeSwitch.isChecked = themeManager.isDarkMode
-
-        themeSwitch.setOnCheckedChangeListener { _, isChecked ->
-            themeManager.isDarkMode = isChecked
-            recreate()
-        }
     }
 
     private fun setupUI() {

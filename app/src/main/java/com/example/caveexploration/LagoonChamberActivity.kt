@@ -2,13 +2,11 @@ package com.example.caveexploration
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.switchmaterial.SwitchMaterial
 
 class LagoonChamberActivity : AppCompatActivity() {
     private lateinit var themeManager: ThemeManager
@@ -22,7 +20,6 @@ class LagoonChamberActivity : AppCompatActivity() {
         setContentView(R.layout.activity_lagoon_chamber)
 
         setupToolbar()
-        setupThemeSwitch()
         setupUI()
         setupInteractiveElements()
         setupBackButton()
@@ -36,16 +33,6 @@ class LagoonChamberActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
-    }
-
-    private fun setupThemeSwitch() {
-        val themeSwitch = findViewById<SwitchMaterial>(R.id.themeSwitch)
-        themeSwitch.isChecked = themeManager.isDarkMode
-
-        themeSwitch.setOnCheckedChangeListener { _, isChecked ->
-            themeManager.isDarkMode = isChecked
-            recreate()
-        }
     }
 
     private fun setupUI() {
