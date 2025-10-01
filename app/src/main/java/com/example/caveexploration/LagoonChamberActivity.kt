@@ -1,5 +1,6 @@
 package com.example.caveexploration
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -137,9 +138,11 @@ class LagoonChamberActivity : AppCompatActivity() {
 
     private fun setupBackButton() {
         findViewById<MaterialButton>(R.id.backToEntranceButton).setOnClickListener {
-            // Volver a la actividad principal y limpiar el stack
-            finishAffinity()
-            startActivity(intent.addFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP))
+            // Crear un nuevo Intent para MainActivity y limpiar el stack
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+            finish()
         }
     }
 
